@@ -5,12 +5,7 @@ import 'models/counter_model.dart';
 import 'models/login_status_model.dart';
 import 'models/user_model.dart';
 
-import 'pages/home_page.dart';
-import 'pages/change_notifier_page.dart';
-import 'pages/selector_page.dart';
-import 'pages/future_provider_page.dart';
-import 'pages/stream_provider_page.dart';
-import 'pages/proxy_provider_page.dart';
+import 'routes/routes_config.dart';
 
 void main() {
   runApp(
@@ -39,15 +34,8 @@ class MyApp extends StatelessWidget {
       title: 'Provider Demo',
       theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
       // 设置路由
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const HomePage(),
-        '/change_notifier': (context) => const ChangeNotifierPage(),
-        '/selector': (context) => const SelectorPage(),
-        '/future_provider': (context) => const FutureProviderPage(),
-        '/stream_provider': (context) => const StreamProviderPage(),
-        '/proxy_provider': (context) => const ProxyProviderPage(),
-      },
+      initialRoute: ROUTE_ROOT,
+      routes: routes,
     );
   }
 }
